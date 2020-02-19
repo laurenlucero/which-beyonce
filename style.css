@@ -1,4 +1,6 @@
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -14,39 +16,57 @@ h1 {
 
 main {
   display: flex;
-  min-height: 100vh;
   text-transform: uppercase;
+  min-height: 100vh;
 }
 
 aside {
   background: #000000;
-  border: 2px solid red;
   color: #FFF;
   flex: 1;
   text-align: center;
 }
 
+.aside-title {
+  font-size: 1em;
+  font-weight: 100;
+  justify-content: center;
+  margin-left: 8em;
+  margin-top: 4em;
+  width: 30%;
+}
+
+.matched-count {
+  font-size: 70px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
 .completed-pairs {
-  border: 2px solid orange;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  width: 85%;
+  width: 80%;
 }
 
-.completed-pair{
+.completed-pair {
   background-color: #787878;
-  height: 50px;
+  height: 70px;
   margin: 15px;
-  width: 46px;
+  width: 60px;
 }
 
 .top-3 {
-  border: 2px solid paleturquoise;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 130px;
   padding-top: 16px;
   width: 85%;
+}
+
+h3 {
+  font-weight: 100;
 }
 
 li {
@@ -57,70 +77,57 @@ li {
 
 .b-cards {
   background: #E8E8E8;
-  border: 2px solid blue;
+  display: flex;
+  padding: 50px;
+  flex-wrap: wrap;
+  justify-content: space-around;
   flex: 3;
 }
 
 .b-card {
   background: #FFF;
-  border: 2px solid black;
-  display: inline-block;
+  border: 4px solid black;
+  text-align: center;
+  width: 160px;
+  height: 220px;
+  text-align: center;
   font-size: 100px;
-  height: 230px;
   padding-top: 50px;
-  text-align: center;
-  text-align: center;
-  width: 180px;
+  margin: 30px;
+  box-shadow: 12px 10px 34px -23px #333233;
 }
 
-/* styles for win page */
+ .b-card.one {
+   margin-top: 100px;
+   margin-bottom: 0px;
+ }
 
-.win-screen {
-  background-color: #FFF;
-  overflow: hidden;
-  padding-top: 22px;
-  position: relative;
-  text-align: center;
-}
+ .b-card.two {
+   transform: rotate(-15deg);
+ }
 
-.congrats {
-  font-size: 4em;
-  margin: 45px;
-  position: relative;
-  z-index: 2;
-}
+ .b-card.four {
+   transform: rotate(20deg);
+ }
 
-.win-screen img {
-height: auto;
-left: 0;
-opacity: 0.6;
-position: absolute;
-top: 0;
-width: 100%;
-}
+ .b-card.five {
+   transform: rotate(15deg);
+   margin-left: 200px;
+ }
 
-.win-msg {
-  font-size: 2em;
-  margin: 10px;
-  padding-top: 45px;
-  position: relative;
-  z-index: 2;
-}
+ .b-card.six {
+   transform: rotate(-10deg);
+ }
 
-.win-time {
-  font-size: 2em;
-  margin: 10px;
-  position: relative;
-  z-index: 2;
-}
+ .b-card.eight {
+   transform: rotate(-5deg);
+ }
 
-button {
-  background-color: black;
-  color: #FFF;
-  border: none;
-  font-size: 1em;
-  margin: 33px;
-  padding: 22px 44px;
-  position: relative;
-  z-index: 2;
-}
+ .b-card.nine {
+   transform: rotate(5deg);
+   margin-right: 0px;
+ }
+
+ .b-card.ten {
+   transform: rotate(-15deg);
+ }
