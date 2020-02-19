@@ -1,0 +1,80 @@
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px 20px;
+  font-size: 1.5em;
+}
+
+main {
+  display: flex;  
+  text-transform: uppercase;
+  min-height: 100vh;
+}
+
+aside {
+  flex: 1;
+  border: 2px solid red;
+  color: #FFF;
+  background: #000000;
+  text-align: center;
+  
+}
+
+.completed-pairs {
+  border: 2px solid orange;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+
+
+}
+.completed-pair{
+  background-color: #787878;
+  width: 46px;
+  height: 50px;
+  margin: 15px;
+  
+}
+
+.top-3 {
+  border: 2px solid paleturquoise;
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 16px;
+  
+}
+
+li {
+  list-style-type: none;
+  padding-top: 16px;
+  padding-bottom: 10px;
+}
+
+.b-cards {
+  flex: 3;
+  border: 2px solid blue;
+  background: #E8E8E8;
+  
+}
+
+.b-card {
+  background: #FFF;
+  border: 2px solid black;
+  display: inline-block;
+  text-align: center;
+  width: 180px;
+  height: 230px;
+  text-align: center;
+  font-size: 100px;
+  padding-top: 50px;
+}
