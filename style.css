@@ -1,4 +1,6 @@
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -20,33 +22,51 @@ main {
 
 aside {
   background: #000000;
-  border: 2px solid red;
   color: #FFF;
   flex: 1;
   text-align: center;
 }
 
+.aside-title {
+  font-size: 1em;
+  font-weight: 100;
+  justify-content: center;
+  margin-left: 8em;
+  margin-top: 4em;
+  width: 30%;
+}
+
+.matched-count {
+  font-size: 70px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
 .completed-pairs {
-  border: 2px solid orange;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  width: 85%;
+  width: 80%;
 }
 
-.completed-pair{
+.completed-pair {
   background-color: #787878;
-  height: 50px;
+  height: 70px;
   margin: 15px;
-  width: 46px;
+  width: 60px;
 }
 
 .top-3 {
-  border: 2px solid paleturquoise;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 130px;
   padding-top: 16px;
   width: 85%;
+}
+
+h3 {
+  font-weight: 100;
 }
 
 li {
@@ -57,7 +77,6 @@ li {
 
 .b-cards {
   background: #E8E8E8;
-  border: 2px solid blue;
   flex: 3;
 }
 
