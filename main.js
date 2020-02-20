@@ -1,1 +1,1 @@
-console.log('main test')
+var bCards = document.querySelector('.b-cards');

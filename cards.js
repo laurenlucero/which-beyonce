@@ -1,1 +1,10 @@
-console.log('cards test')
+class Card {
+  Constructor(matchInfo) {
+    this.matchInfo = matchInfo;
+    this.matched = false;
+    
+  }
+  match() {
+    // We will want to match our values
+  }
+}
