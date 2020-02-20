@@ -140,6 +140,7 @@ li {
   padding-top: 22px;
   position: relative;
   text-align: center;
+  min-height: 100vh;
 }
 
 .congrats {
@@ -150,12 +151,12 @@ li {
 }
 
 .win-screen img {
-height: auto;
-left: 0;
-opacity: 0.6;
-position: absolute;
-top: 0;
-width: 100%;
+  height: auto;
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .win-msg {
@@ -182,4 +183,7 @@ button {
   padding: 22px 44px;
   position: relative;
   z-index: 2;
+}
+.hidden {
+  display: none;
 }
