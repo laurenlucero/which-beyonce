@@ -98,6 +98,7 @@ li {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s;
+  cursor: pointer;
 }
 
 .b-card:active {
@@ -105,11 +106,11 @@ li {
   transition: transform .2s;
 }
 
-.b-card.flip {
+.flip {
   transform: rotateY(180deg);
 }
 
- .b-card.one {
+ /* .b-card.one {
    margin-top: 100px;
    margin-bottom: 0px;
  }
@@ -142,12 +143,12 @@ li {
 
  .b-card.ten {
    transform: rotate(-15deg);
- }
+ } */
 
  /* styles for win page */
 
 .win-screen {
-  background-color: #FFF;
+  background-color: #FFFFFF;
   overflow: hidden;
   padding-top: 22px;
   position: relative;
@@ -188,7 +189,7 @@ li {
 
 button {
   background-color: black;
-  color: #FFF;
+  color: #FFFFFF;
   border: none;
   font-size: 1em;
   margin: 33px;
@@ -209,16 +210,16 @@ button {
   left: 0px;
   transform: rotateY(180deg);
   backface-visibility: hidden;
-  background-color: #FFF;
-
+  background-color: #FFFFFF;
+  pointer-events: none;
 }
+
 .front-card {
   width: 100%;
   height: 100%;
-  background-color: #FFF;
+  background-color: #FFFFFF;
   border: 4px solid black;
   text-align: center;
   backface-visibility: hidden;
-  /* transform: rotateY(180deg); */
-
+  pointer-events: none;
 }
