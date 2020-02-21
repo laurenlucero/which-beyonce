@@ -1,7 +1,8 @@
 class Card {
-  constructor(matchInfo) {
+  constructor(matchInfo, altInfo) {
     this.matchInfo = matchInfo;
     this.matched = false;
+    this.altInfo = altInfo;
 
   }
   match() {
