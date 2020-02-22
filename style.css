@@ -212,6 +212,7 @@ button {
   backface-visibility: hidden;
   background-color: #FFFFFF;
   pointer-events: none;
+  object-fit: cover;
 }
 
 .front-card {

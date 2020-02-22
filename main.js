@@ -21,9 +21,13 @@ function flipCard() {
   if (event.target.classList.contains('b-card')) {
     event.target.classList.toggle('flip');
   }
-  console.log(event.target);
-  console.log(event.target.getAttribute('data-image'));
+  // console.log(event.target);
+  // console.log(event.target.getAttribute('data-image'));
   var clickedCard = event.target.getAttribute('data-image');
+  deck.checkSelectedCards(clickedCard);
+  card1.match(); // would have to repeat for all since cards are single
+  //can't use the same as the deck object
+  // console.log(cardObjects);
 }
 
 
@@ -36,7 +40,7 @@ window.onload = function hideWinPage() {
 
   function displayCards() {
     for (var i = 0; i < deck.cards.length; i++) {
-     console.log(deck.cards[i]);
+     // console.log(deck.cards[i]);
      cardContainer.innerHTML+=`
      <div class="b-card" data-image=${deck.cards[i].matchInfo}>
         <div class="front-card">B</div>
