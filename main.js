@@ -25,29 +25,30 @@ function flipCard() {
   // console.log(event.target.getAttribute('data-image'));
   var clickedCard = event.target.getAttribute('data-image');
   deck.checkSelectedCards(clickedCard);
-  card1.match(); // would have to repeat for all since cards are single
-  //can't use the same as the deck object
-  // console.log(cardObjects);
+  changeToMatched(cardObjects);
 }
 
+function changeToMatched(cardObjects) {
+  for (var i = 0; i < cardObjects.length; i++) {
+    cardObjects[i].match();
+  }
+}
 
 window.onload = function hideWinPage() {
   winScreen.classList.add('hidden');
   displayCards();
 }
 
-
-
   function displayCards() {
+    deck.shuffle();
+    console.log();
     for (var i = 0; i < deck.cards.length; i++) {
-     // console.log(deck.cards[i]);
      cardContainer.innerHTML+=`
      <div class="b-card" data-image=${deck.cards[i].matchInfo}>
         <div class="front-card">B</div>
-        <img class="back-card" src="assets/${deck.cards[i].matchInfo}.jpg" alt="${deck.cards[i].altInfo}">
-      </div>
-     `
-      // deck.cards[i] gives us the current element
+        <img class="back-card" src="assets/${deck.cards[i].matchInfo}.jpg"
+        alt="${deck.cards[i].altInfo}">
+      </div>`
     }
   }
 
