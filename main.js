@@ -14,30 +14,27 @@ var card10 = new Card ("braids-bey", "Braids Bey")
 var cardObjects = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10];
 var deck = new Deck (cardObjects);
 
-
 cardContainer.addEventListener('click', flipCard);
 
 function flipCard() {
   if (event.target.classList.contains('b-card')) {
     event.target.classList.toggle('flip');
   }
-  console.log(event.target);
-  console.log(event.target.getAttribute('data-image'));
   var clickedCard = event.target.getAttribute('data-image');
+  deck.selectedCards.push(clickedCard);
+  console.table(deck.selectedCards);
+  deck.checkSelectedCards(clickedCard);
 }
-
 
 window.onload = function hideWinPage() {
   winScreen.classList.add('hidden');
   displayCards();
 }
 
-
-
-  function displayCards() {
-    for (var i = 0; i < deck.cards.length; i++) {
-     console.log(deck.cards[i]);
-     cardContainer.innerHTML+=`
+function displayCards() {
+  for (var i = 0; i < deck.cards.length; i++) {
+   // console.log(deck.cards[i]);
+    cardContainer.innerHTML+=`
      <div class="b-card" data-image=${deck.cards[i].matchInfo}>
         <div class="front-card">B</div>
         <img class="back-card" src="assets/${deck.cards[i].matchInfo}.jpg" alt="${deck.cards[i].altInfo}">
