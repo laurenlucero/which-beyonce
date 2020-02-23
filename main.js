@@ -14,23 +14,34 @@ var card10 = new Card ("braids-bey", "Braids Bey")
 var cardObjects = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10];
 var deck = new Deck (cardObjects);
 
-
 cardContainer.addEventListener('click', flipCard);
 
 function flipCard() {
   if (event.target.classList.contains('b-card')) {
     event.target.classList.toggle('flip');
   }
-  // console.log(event.target);
-  // console.log(event.target.getAttribute('data-image'));
-  var clickedCard = event.target.getAttribute('data-image');
-  deck.checkSelectedCards(clickedCard);
+  var clickedCard = event.target;
   changeToMatched(cardObjects);
+  deck.checkSelectedCards(clickedCard);
+  limitFlips();
 }
 
 function changeToMatched(cardObjects) {
   for (var i = 0; i < cardObjects.length; i++) {
     cardObjects[i].match();
+  }
+}
+
+// can still click more than two cards
+// matched cards not pushing into matchedCards array BC matched is not changing to true when cards match
+function limitFlips() {
+    if (deck.selectedCards.length === 2 && deck.selectedCards[0] !== deck.selectedCards[1]) {
+      setTimeout(() => {
+      deck.selectedCards[0].classList.remove('flip');
+      deck.selectedCards[1].classList.remove('flip');
+      deck.selectedCards.pop();
+      deck.selectedCards.pop();
+}, 1500);
   }
 }
 
@@ -41,7 +52,6 @@ window.onload = function hideWinPage() {
 
   function displayCards() {
     deck.shuffle();
-    console.log();
     for (var i = 0; i < deck.cards.length; i++) {
      cardContainer.innerHTML+=`
      <div class="b-card" data-image=${deck.cards[i].matchInfo}>
@@ -51,8 +61,6 @@ window.onload = function hideWinPage() {
       </div>`
     }
   }
-
-
 
   // sample event to add back in win page
 
