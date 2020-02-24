@@ -13,17 +13,20 @@ var card9 = new Card ("braids-bey", "Braids Bey")
 var card10 = new Card ("braids-bey", "Braids Bey")
 var cardObjects = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10];
 var deck = new Deck (cardObjects);
+var lockBoard = false;
 
 cardContainer.addEventListener('click', flipCard);
 
 function flipCard() {
+  if (lockBoard) return;
+  if (this === deck.selectedCards[0]) return;
   if (event.target.classList.contains('b-card')) {
     event.target.classList.toggle('flip');
   }
   var clickedCard = event.target;
   deck.checkSelectedCards(clickedCard);
   changeToMatched(cardObjects);
-  limitFlips();
+  unFlip();
 }
 
 function changeToMatched(cardObjects) {
@@ -32,17 +35,20 @@ function changeToMatched(cardObjects) {
   }
 }
 
-// can still click more than two cards
-// matched cards not pushing into matchedCards array BC matched is not changing to true when cards match
-function limitFlips() {
-    if (deck.selectedCards.length === 2 && deck.selectedCards[0] !== deck.selectedCards[1]) {
+function unFlip() {
+    if (deck.selectedCards.length === 2 &&
+      deck.selectedCards[0] !== deck.selectedCards[1]) {
+      lockBoard = true;
       setTimeout(() => {
       deck.selectedCards[0].classList.remove('flip');
       deck.selectedCards[1].classList.remove('flip');
       deck.selectedCards.pop();
       deck.selectedCards.pop();
+      lockBoard = false;
 }, 1500);
   }
+    // lockBoard = false;
+    // console.log(lockBoard);
 }
 
 window.onload = function hideWinPage() {
