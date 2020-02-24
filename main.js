@@ -21,8 +21,8 @@ function flipCard() {
     event.target.classList.toggle('flip');
   }
   var clickedCard = event.target;
-  changeToMatched(cardObjects);
   deck.checkSelectedCards(clickedCard);
+  changeToMatched(cardObjects);
   limitFlips();
 }
 
