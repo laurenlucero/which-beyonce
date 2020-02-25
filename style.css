@@ -50,11 +50,11 @@ aside {
   width: 80%;
 }
 
-.completed-pair {
-  background-color: #787878;
+.completed-pair > img {
   height: 70px;
-  margin: 15px;
   width: 60px;
+  margin: 15px;
+  object-fit: cover;
 }
 
 .top-3 {

@@ -20,6 +20,7 @@ var endTime;
 var winTime;
 var winTimeDisplay = document.querySelector('.win-time')
 var playAgainBtn = document.querySelector('.play-again-btn')
+var completedPairs = document.querySelector('.completed-pairs');
 
 cardContainer.addEventListener('click', flipCard);
 playAgainBtn.addEventListener('click', hideWinPage);
@@ -32,6 +33,7 @@ function flipCard() {
   var clickedCard = event.target;
   deck.checkSelectedCards(clickedCard);
   changeToMatched(cardObjects);
+  showPairs();
   unflipCards();
 }
 
@@ -106,14 +108,28 @@ function hideWinPage() {
       winScreen.classList.remove('hidden');
       mainScreen.classList.add('hidden');
       winTimeDisplay.innerHTML = `winTime`;
+      console.log(typeof winTime);
   }
 
-
-  // sample event to add back in win page
-
-  // cardContainer.addEventListener('click', switchScreens)
-  //
-  // function switchScreens() {
-  //   winScreen.classList.remove('hidden');
-  //   mainScreen.classList.add('hidden');
-  // }
+  function showPairs() {
+    if (deck.matchedCards.length >= 2) {
+          completedPairs.innerHTML = `<div class="completed-pair"><img src="assets/${deck.matchedCards[0].dataset.image}.jpg"
+          alt="${deck.matchedCards[0].dataset.image}"></div>`
+    }
+    if (deck.matchedCards.length >= 4) {
+          completedPairs.innerHTML += `<div class="completed-pair"><img src="assets/${deck.matchedCards[2].dataset.image}.jpg"
+          alt="${deck.matchedCards[2].dataset.image}"></div>`
+    }
+    if (deck.matchedCards.length >= 6) {
+          completedPairs.innerHTML += `<div class="completed-pair"><img src="assets/${deck.matchedCards[4].dataset.image}.jpg"
+          alt="${deck.matchedCards[4].dataset.image}"></div>`
+    }
+    if (deck.matchedCards.length >= 8) {
+          completedPairs.innerHTML += `<div class="completed-pair"><img src="assets/${deck.matchedCards[6].dataset.image}.jpg"
+          alt="${deck.matchedCards[6].dataset.image}"></div>`
+    }
+    if (deck.matchedCards.length >= 10) {
+          completedPairs.innerHTML += `<div class="completed-pair"><img src="assets/${deck.matchedCards[8].dataset.image}.jpg"
+          alt="${deck.matchedCards[8].dataset.image}"></div>`  
+    }
+  }
