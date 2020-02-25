@@ -15,19 +15,24 @@ var cardObjects = [card1, card2, card3, card4, card5, card6, card7, card8, card9
 var deck = new Deck (cardObjects);
 var lockBoard = false;
 var matchCount = document.querySelector('.matched-count');
+var startTime;
+var endTime;
+var winTime;
+var winTimeDisplay = document.querySelector('.win-time')
+var playAgainBtn = document.querySelector('.play-again-btn')
 
 cardContainer.addEventListener('click', flipCard);
+playAgainBtn.addEventListener('click', hideWinPage);
 
 function flipCard() {
   if (lockBoard) return;
-  // if (this === deck.selectedCards[0]) return;
   if (event.target.classList.contains('b-card')) {
     event.target.classList.toggle('flip');
   }
   var clickedCard = event.target;
   deck.checkSelectedCards(clickedCard);
   changeToMatched(cardObjects);
-  unFlip();
+  unflipCards();
 }
 
 function changeToMatched(cardObjects) {
@@ -37,7 +42,7 @@ function changeToMatched(cardObjects) {
   hideMatchedCards(deck.matchedCards);
 }
 
-function unFlip() {
+function unflipCards() {
     if (deck.selectedCards.length === 2 &&
       deck.selectedCards[0] !== deck.selectedCards[1]) {
       lockBoard = true;
@@ -51,9 +56,15 @@ function unFlip() {
   }
 }
 
-window.onload = function hideWinPage() {
+window.onload = hideWinPage()
+
+function hideWinPage() {
   winScreen.classList.add('hidden');
+  mainScreen.classList.remove('hidden');
+  deck.matchedCards = [];
+  matchCount.innerText = 0;
   displayCards();
+  startTime = Date.now();
 }
 
   function displayCards() {
@@ -69,7 +80,7 @@ window.onload = function hideWinPage() {
   }
 
   function hideMatchedCards(matchedCards) {
-    //eventually add delay
+    //eventually add delay?
     for (var i = 0; i < matchedCards.length; i++) {
       matchedCards[i].classList.add('hidden');
     }
@@ -77,8 +88,26 @@ window.onload = function hideWinPage() {
   }
 
   function updateCounter() {
-    matchCount.innerText = (deck.matchedCards.length) /2
+    matchCount.innerText = (deck.matchedCards.length) / 2;
+    getWinTime();
   }
+
+  function getWinTime() {
+    if (deck.matchedCards.length === 10) {
+      endTime = Date.now();
+      console.log(endTime);
+      showWinScreen();
+    }
+    winTime = Math.floor((endTime - startTime) / 1000);
+    console.log(winTime);
+  }
+
+  function showWinScreen() {
+      winScreen.classList.remove('hidden');
+      mainScreen.classList.add('hidden');
+      winTimeDisplay.innerHTML = `winTime`;
+  }
+
 
   // sample event to add back in win page
 
