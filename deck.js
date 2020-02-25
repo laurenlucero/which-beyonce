@@ -23,8 +23,6 @@ class Deck {
     this.moveToMatched();
     console.log(this.selectedCards);
     console.log(this.matchedCards);
-    console.log(cardObjects);
-    console.log(event.target);
   }
 
   moveToMatched() {
