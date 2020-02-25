@@ -14,12 +14,13 @@ var card10 = new Card ("braids-bey", "Braids Bey")
 var cardObjects = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10];
 var deck = new Deck (cardObjects);
 var lockBoard = false;
+var matchCount = document.querySelector('.matched-count');
 
 cardContainer.addEventListener('click', flipCard);
 
 function flipCard() {
   if (lockBoard) return;
-  if (this === deck.selectedCards[0]) return;
+  // if (this === deck.selectedCards[0]) return;
   if (event.target.classList.contains('b-card')) {
     event.target.classList.toggle('flip');
   }
@@ -33,6 +34,7 @@ function changeToMatched(cardObjects) {
   for (var i = 0; i < cardObjects.length; i++) {
     cardObjects[i].match();
   }
+  hideMatchedCards(deck.matchedCards);
 }
 
 function unFlip() {
@@ -47,8 +49,6 @@ function unFlip() {
       lockBoard = false;
 }, 1500);
   }
-    // lockBoard = false;
-    // console.log(lockBoard);
 }
 
 window.onload = function hideWinPage() {
@@ -66,6 +66,18 @@ window.onload = function hideWinPage() {
         alt="${deck.cards[i].altInfo}">
       </div>`
     }
+  }
+
+  function hideMatchedCards(matchedCards) {
+    //eventually add delay
+    for (var i = 0; i < matchedCards.length; i++) {
+      matchedCards[i].classList.add('hidden');
+    }
+    updateCounter();
+  }
+
+  function updateCounter() {
+    matchCount.innerText = (deck.matchedCards.length) /2
   }
 
   // sample event to add back in win page
