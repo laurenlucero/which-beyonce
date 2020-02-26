@@ -21,6 +21,8 @@ var winTime;
 var winTimeDisplay = document.querySelector('.win-time')
 var playAgainBtn = document.querySelector('.play-again-btn')
 var completedPairs = document.querySelector('.completed-pairs');
+var highScores = [];
+var orderedList = document.querySelector('ol');
 
 cardContainer.addEventListener('click', flipCard);
 playAgainBtn.addEventListener('click', hideWinPage);
@@ -59,7 +61,8 @@ function unflipCards() {
   }
 }
 
-window.onload = hideWinPage()
+window.onload = hideWinPage();
+window.onload = getHighScores();
 
 function hideWinPage() {
   winScreen.classList.add('hidden');
@@ -101,6 +104,7 @@ function hideWinPage() {
       endTime = Date.now();
       console.log(endTime);
       winTime = Math.floor((endTime - startTime) / 1000);
+      storeHighScores();
       showWinScreen();
     }
   }
@@ -108,9 +112,7 @@ function hideWinPage() {
   function showWinScreen() {
       winScreen.classList.remove('hidden');
       mainScreen.classList.add('hidden');
-      console.log(winTime);
       winTimeDisplay.innerHTML = `${winTime} seconds`;
-      console.log(typeof winTime);
   }
 
   function showPairs() {
@@ -134,4 +136,28 @@ function hideWinPage() {
           completedPairs.innerHTML += `<div class="completed-pair"><img src="assets/${deck.matchedCards[8].dataset.image}.jpg"
           alt="${deck.matchedCards[8].dataset.image}"></div>`
     }
+}
+
+function storeHighScores() {
+  highScores.push(winTime);
+  if (highScores.length > 3) {
+    highScores.sort((a,b) => a-b);
+    highScores.pop();
+  }
+  console.log(highScores);
+  localStorage.setItem('highScores', JSON.stringify(highScores));
+}
+
+function getHighScores() {
+  var stringifiedScores = localStorage.getItem('highScores');
+  var parsedHighScores = JSON.parse(stringifiedScores);
+  highScores = parsedHighScores;
+  displayHighScores();
+}
+
+function displayHighScores() {
+  orderedList.innerHTML = '';
+  for (var i = 0; i < highScores.length; i++) {
+    orderedList.innerHTML += `<li>${highScores[i]}</li>`;
+  }
 }
