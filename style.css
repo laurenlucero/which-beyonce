@@ -17,7 +17,7 @@ h1 {
 main {
   display: flex;
   text-transform: uppercase;
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 aside {
@@ -53,14 +53,13 @@ aside {
 .completed-pair > img {
   height: 70px;
   width: 60px;
-  margin: 15px;
+  margin: 10px;
   object-fit: cover;
 }
 
 .top-3 {
   margin: auto;
-  margin-top: 130px;
-  padding-top: 16px;
+  margin-top: 30px;
   width: 85%;
 }
 
@@ -88,7 +87,7 @@ li {
   height: 220px;
   text-align: center;
   font-size: 100px;
-  margin: 30px;
+  margin: 20px;
   box-shadow: 12px 10px 34px -23px #333233;
   position: relative;
   transform: scale(1);
