@@ -149,7 +149,7 @@ function storeHighScores() {
 }
 
 function getHighScores() {
-  var stringifiedScores = localStorage.getItem('highScores');
+  var stringifiedScores = localStorage.getItem('highScores') || '[]';
   var parsedHighScores = JSON.parse(stringifiedScores);
   highScores = parsedHighScores;
   displayHighScores();
