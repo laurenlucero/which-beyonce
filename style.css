@@ -80,6 +80,7 @@ li {
   flex-wrap: wrap;
   justify-content: space-around;
   flex: 3;
+  /* pointer-events: none; */
 }
 
 .b-card {
