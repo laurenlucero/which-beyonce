@@ -27,14 +27,15 @@ playAgainBtn.addEventListener('click', hideWinPage);
 
 function flipCard() {
   if (lockBoard) return;
+  var clickedCard = event.target;
   if (event.target.classList.contains('b-card')) {
     event.target.classList.toggle('flip');
+    //focus on disabling the event lsitener
+    deck.checkSelectedCards(clickedCard);
+    changeToMatched(cardObjects);
+    showPairs();
+    unflipCards();
   }
-  var clickedCard = event.target;
-  deck.checkSelectedCards(clickedCard);
-  changeToMatched(cardObjects);
-  showPairs();
-  unflipCards();
 }
 
 function changeToMatched(cardObjects) {
@@ -99,16 +100,16 @@ function hideWinPage() {
     if (deck.matchedCards.length === 10) {
       endTime = Date.now();
       console.log(endTime);
+      winTime = Math.floor((endTime - startTime) / 1000);
       showWinScreen();
     }
-    winTime = Math.floor((endTime - startTime) / 1000);
-    console.log(winTime);
   }
 
   function showWinScreen() {
       winScreen.classList.remove('hidden');
       mainScreen.classList.add('hidden');
-      winTimeDisplay.innerHTML = `winTime`;
+      console.log(winTime);
+      winTimeDisplay.innerHTML = `${winTime} seconds`;
       console.log(typeof winTime);
   }
 
