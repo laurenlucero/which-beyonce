@@ -62,7 +62,7 @@ function unflipCards() {
 }
 
 window.onload = hideWinPage();
-window.onload = getHighScores();
+// window.onload = getHighScores();
 
 function hideWinPage() {
   winScreen.classList.add('hidden');
@@ -72,6 +72,7 @@ function hideWinPage() {
   displayCards();
   startTime = Date.now();
   completedPairs.innerHTML = ``;
+  getHighScores();
 }
 
   function displayCards() {
