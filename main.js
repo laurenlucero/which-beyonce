@@ -67,6 +67,7 @@ function hideWinPage() {
   matchCount.innerText = 0;
   displayCards();
   startTime = Date.now();
+  completedPairs.innerHTML = ``;
 }
 
   function displayCards() {
@@ -130,6 +131,6 @@ function hideWinPage() {
     }
     if (deck.matchedCards.length >= 10) {
           completedPairs.innerHTML += `<div class="completed-pair"><img src="assets/${deck.matchedCards[8].dataset.image}.jpg"
-          alt="${deck.matchedCards[8].dataset.image}"></div>`  
+          alt="${deck.matchedCards[8].dataset.image}"></div>`
     }
-  }
+}
