@@ -25,6 +25,7 @@ class Deck {
     console.log(this.matchedCards);
   }
 
+// moves matched cards into array
   moveToMatched() {
     if (this.selectedCards.length >= 2 &&
       this.selectedCards[0].dataset.image
