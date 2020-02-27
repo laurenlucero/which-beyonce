@@ -16,8 +16,8 @@ h1 {
 
 main {
   display: flex;
-  text-transform: uppercase;
   min-height: 95vh;
+  text-transform: uppercase;
 }
 
 aside {
@@ -52,14 +52,14 @@ aside {
 
 .completed-pair > img {
   height: 70px;
-  width: 60px;
   margin: 10px;
   object-fit: cover;
+  width: 60px;
 }
 
 .top-3 {
-  margin: auto;
   margin-top: 30px;
+  margin: auto;
   width: 85%;
 }
 
@@ -76,25 +76,24 @@ li {
 .b-cards {
   background: #E8E8E8;
   display: flex;
-  padding: 50px;
   flex-wrap: wrap;
-  justify-content: space-around;
   flex: 3;
-  /* pointer-events: none; */
+  justify-content: space-around;
+  padding: 50px;
 }
 
 .b-card {
-  width: 160px;
-  height: 220px;
-  text-align: center;
-  font-size: 100px;
-  margin: 20px;
   box-shadow: 12px 10px 34px -23px #333233;
-  position: relative;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform .5s;
   cursor: pointer;
+  font-size: 100px;
+  height: 220px;
+  margin: 20px;
+  position: relative;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform: scale(1);
+  transition: transform .5s;
+  width: 160px;
 }
 
 .b-card:active {
@@ -106,50 +105,15 @@ li {
   transform: rotateY(180deg);
 }
 
- /* .b-card.one {
-   margin-top: 100px;
-   margin-bottom: 0px;
- }
-
- .b-card.two {
-   transform: rotate(-15deg);
- }
-
- .b-card.four {
-   transform: rotate(20deg);
- }
-
- .b-card.five {
-   transform: rotate(15deg);
-   margin-left: 200px;
- }
-
- .b-card.six {
-   transform: rotate(-10deg);
- }
-
- .b-card.eight {
-   transform: rotate(-5deg);
- }
-
- .b-card.nine {
-   transform: rotate(5deg);
-   margin-right: 0px;
- }
-
- .b-card.ten {
-   transform: rotate(-15deg);
- } */
-
  /* styles for win page */
 
 .win-screen {
   background-color: #FFFFFF;
+  min-height: 100vh;
   overflow: hidden;
   padding-top: 22px;
   position: relative;
   text-align: center;
-  min-height: 100vh;
 }
 
 .congrats {
@@ -185,8 +149,8 @@ li {
 
 button {
   background-color: black;
-  color: #FFFFFF;
   border: none;
+  color: #FFFFFF;
   font-size: 1em;
   margin: 33px;
   padding: 22px 44px;
@@ -198,25 +162,29 @@ button {
   display: none;
 }
 
+/* .remove-card {
+  opacity: 0;
+} */
+
 .back-card {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  transform: rotateY(180deg);
   backface-visibility: hidden;
   background-color: #FFFFFF;
-  pointer-events: none;
+  height: 100%;
+  left: 0px;
   object-fit: cover;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  transform: rotateY(180deg);
+  width: 100%;
 }
 
 .front-card {
-  width: 100%;
-  height: 100%;
+  backface-visibility: hidden;
   background-color: #FFFFFF;
   border: 4px solid black;
-  text-align: center;
-  backface-visibility: hidden;
+  height: 100%;
   pointer-events: none;
+  text-align: center;
+  width: 100%;
 }
