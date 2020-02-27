@@ -21,8 +21,6 @@ class Deck {
   checkSelectedCards(clickedCard) {
     this.selectedCards.push(clickedCard);
     this.moveToMatched();
-    console.log(this.selectedCards);
-    console.log(this.matchedCards);
   }
 
 // moves matched cards into array
