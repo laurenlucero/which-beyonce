@@ -162,10 +162,6 @@ button {
   display: none;
 }
 
-/* .remove-card {
-  opacity: 0;
-} */
-
 .back-card {
   backface-visibility: hidden;
   background-color: #FFFFFF;
