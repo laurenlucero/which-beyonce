@@ -5,7 +5,7 @@ If they match, that player “scores”.
 If the two cards don’t match, they must be flipped back over. 
 The goal is the get the greatest amount of matches.
 
-##Learning Goals
+## Learning Goals
 Solidify and demonstrate understanding of:
 - semantic HTML
 - DRY JavaScript
