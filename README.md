@@ -14,7 +14,9 @@ Solidify and demonstrate understanding of:
 - Understand the difference between the data model and how the data is displayed on the DOM
 - Match/recreate a UI and create a great UX
 
-![Game Start Comp](assets/UI-gamestart.png)
+### Comps
 ![Game Play Comp](assets/UI-gameplay.png)
 ![Game Win Comp](assets/UI-win.png)
+### Wireframing
 ![Wireframe](initial-game-UI.png)
+### Game in action
