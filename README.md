@@ -1,9 +1,9 @@
 ## Overview
-Which Beyoncé? is a memory matching card game that I built with two other developers during module 1 of 4 at [Turing School of Software and Design](https://turing.io/).
+Which Beyoncé? is a memory matching card game built with two other developers during module 1 of 4 at [Turing School of Software and Design](https://turing.io/).
 Each player takes turn flipping over two cards at a time. 
 If they match, that player “scores”. 
 If the two cards don’t match, they must be flipped back over. 
-The goal is the get the greatest amount of matches.
+The goal is the get the greatest amount of matches in the shortest time.
 
 ## Learning Goals
 Solidify and demonstrate understanding of:
@@ -19,7 +19,6 @@ Solidify and demonstrate understanding of:
 
 ### Comps
 ![Game Play Comp](assets/UI-gameplay.png)
-![Game Win Comp](assets/UI-win.png)
 
 ### Wireframing
 ![Wireframe](initial-game-UI.png)
