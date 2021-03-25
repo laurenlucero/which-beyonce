@@ -16,6 +16,7 @@ Solidify and demonstrate understanding of:
 
 ### Game In Action
 ![gif](https://media.giphy.com/media/L4SuqCEeP3Plq2jQZN/giphy.gif)
+Play ![here](https://laurenlucero.github.io/which-beyonce/)
 
 ### Comps
 ![Game Play Comp](assets/UI-gameplay.png)
